@@ -1,0 +1,597 @@
+{
+  "version": "1.0.0",
+  "description": "Danh sách câu hỏi cho ứng dụng EDU AR - Hào Khí Việt",
+  "questions": [
+    {
+      "id": "q1",
+      "modelId": "1",
+      "modelTitle": "CON TÀU BÁC HỒ RA ĐI TÌM ĐƯỜNG CỨU NƯỚC",
+      "question": "Bác Hồ ra đi tìm đường cứu nước vào năm nào?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1911",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "1920",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "1930",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "1945",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Bác Hồ (Nguyễn Ái Quốc) ra đi tìm đường cứu nước vào ngày 5/6/1911 từ Bến Nhà Rồng trên con tàu Amiral Latouche-Tréville.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "modelId": "1",
+      "modelTitle": "CON TÀU BÁC HỒ RA ĐI TÌM ĐƯỜNG CỨU NƯỚC",
+      "question": "Bác Hồ ra đi từ đâu?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bến Nhà Rồng, Sài Gòn",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Cảng Hải Phòng",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Cảng Đà Nẵng",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Cảng Nha Trang",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Bác Hồ ra đi từ Bến Nhà Rồng (nay là Bảo tàng Hồ Chí Minh) tại Sài Gòn trên con tàu Amiral Latouche-Tréville.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "modelId": "1",
+      "modelTitle": "CON TÀU BÁC HỒ RA ĐI TÌM ĐƯỜNG CỨU NƯỚC",
+      "question": "Tên con tàu mà Bác Hồ ra đi tìm đường cứu nước là gì?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amiral Latouche-Tréville",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Titanic",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Queen Mary",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Lusitania",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Bác Hồ ra đi trên con tàu Amiral Latouche-Tréville, một tàu buôn của Pháp.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q4",
+      "modelId": "2",
+      "modelTitle": "DIORAMA CHIẾN THẮNG ĐIỆN BIÊN PHỦ",
+      "question": "Ai là vị tướng chỉ huy chiến thắng Điện Biên Phủ?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Đại tướng Võ Nguyên Giáp",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Đại tướng Nguyễn Chí Thanh",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Đại tướng Lê Đức Anh",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Đại tướng Văn Tiến Dũng",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Đại tướng Võ Nguyên Giáp là Tổng Tư lệnh, trực tiếp chỉ huy chiến dịch Điện Biên Phủ năm 1954.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q5",
+      "modelId": "2",
+      "modelTitle": "DIORAMA CHIẾN THẮNG ĐIỆN BIÊN PHỦ",
+      "question": "Chiến thắng Điện Biên Phủ diễn ra vào năm nào?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1954",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "1953",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "1955",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "1956",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Chiến thắng Điện Biên Phủ diễn ra từ tháng 3 đến tháng 5 năm 1954, kết thúc bằng việc quân Pháp đầu hàng vào ngày 7/5/1954.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q6",
+      "modelId": "2",
+      "modelTitle": "DIORAMA CHIẾN THẮNG ĐIỆN BIÊN PHỦ",
+      "question": "Chiến dịch Điện Biên Phủ kéo dài bao nhiêu ngày?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "56 ngày đêm",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "30 ngày đêm",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "90 ngày đêm",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "120 ngày đêm",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Chiến dịch Điện Biên Phủ diễn ra trong 56 ngày đêm, từ 13/3/1954 đến 7/5/1954.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q7",
+      "modelId": "2",
+      "modelTitle": "DIORAMA CHIẾN THẮNG ĐIỆN BIÊN PHỦ",
+      "question": "Tướng Pháp chỉ huy quân đội Pháp tại Điện Biên Phủ là ai?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tướng Christian de Castries",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Tướng Henri Navarre",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Tướng Jean de Lattre de Tassigny",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Tướng Raoul Salan",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Tướng Christian de Castries là chỉ huy quân đội Pháp tại Điện Biên Phủ và đã đầu hàng vào ngày 7/5/1954.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q8",
+      "modelId": "3",
+      "modelTitle": "TRỐNG ĐỒNG ĐÔNG SƠN",
+      "question": "Trống đồng Đông Sơn thuộc nền văn hóa nào?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Văn hóa Đông Sơn",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Văn hóa Sa Huỳnh",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Văn hóa Óc Eo",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Văn hóa Champa",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Trống đồng Đông Sơn thuộc nền văn hóa Đông Sơn, một nền văn hóa cổ đại của người Việt cách đây khoảng 2500-2000 năm.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q9",
+      "modelId": "3",
+      "modelTitle": "TRỐNG ĐỒNG ĐÔNG SƠN",
+      "question": "Trống đồng Đông Sơn có niên đại khoảng bao nhiêu năm?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "2000-2500 năm",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "1000-1500 năm",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "3000-3500 năm",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "500-1000 năm",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Trống đồng Đông Sơn có niên đại khoảng 2000-2500 năm, từ thế kỷ 7 TCN đến thế kỷ 1 SCN.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q10",
+      "modelId": "3",
+      "modelTitle": "TRỐNG ĐỒNG ĐÔNG SƠN",
+      "question": "Họa tiết nào thường xuất hiện trên trống đồng Đông Sơn?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mặt trời, chim Lạc, người, thuyền",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Hoa sen, rồng, phượng",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Hình học đơn giản",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Chữ viết cổ",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Trống đồng Đông Sơn có các họa tiết đặc trưng: mặt trời ở trung tâm, chim Lạc, người múa, thuyền, và các hoa văn hình học.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q11",
+      "modelId": "1",
+      "modelTitle": "CON TÀU BÁC HỒ RA ĐI TÌM ĐƯỜNG CỨU NƯỚC",
+      "question": "Bác Hồ đã đến những quốc gia nào trong hành trình tìm đường cứu nước?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pháp, Liên Xô, Trung Quốc, Thái Lan",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Mỹ, Anh, Đức, Nhật",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Chỉ có Pháp",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Chỉ có Trung Quốc",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Bác Hồ đã đi qua nhiều quốc gia trong hành trình tìm đường cứu nước, bao gồm Pháp, Liên Xô, Trung Quốc, Thái Lan và nhiều nơi khác.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q12",
+      "modelId": "2",
+      "modelTitle": "DIORAMA CHIẾN THẮNG ĐIỆN BIÊN PHỦ",
+      "question": "Điểm cao nào được coi là then chốt trong chiến dịch Điện Biên Phủ?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Đồi A1 (Độc Lập)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Đồi D1",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Đồi E1",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Đồi F1",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Đồi A1 (Độc Lập) là điểm cao then chốt, là cứ điểm mạnh nhất của quân Pháp tại Điện Biên Phủ.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q13",
+      "modelId": "3",
+      "modelTitle": "TRỐNG ĐỒNG ĐÔNG SƠN",
+      "question": "Trống đồng Đông Sơn được phát hiện lần đầu ở đâu?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Làng Đông Sơn, Thanh Hóa",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Hà Nội",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Huế",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Đà Nẵng",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Trống đồng Đông Sơn được phát hiện lần đầu tại làng Đông Sơn, huyện Đông Sơn, tỉnh Thanh Hóa vào năm 1924.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q14",
+      "modelId": "1",
+      "modelTitle": "CON TÀU BÁC HỒ RA ĐI TÌM ĐƯỜNG CỨU NƯỚC",
+      "question": "Bác Hồ đã làm công việc gì trên con tàu?",
+      "type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Phụ bếp",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Thủy thủ",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Thuyền trưởng",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Hành khách",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Bác Hồ đã làm công việc phụ bếp trên con tàu Amiral Latouche-Tréville để có thể ra nước ngoài tìm đường cứu nước.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q15",
+      "modelId": "2",
+      "modelTitle": "DIORAMA CHIẾN THẮNG ĐIỆN BIÊN PHỦ",
+      "question": "Hiệp định nào được ký kết sau chiến thắng Điện Biên Phủ?",
+      "type": "multiple_choice",
+      "options": [
+        { "id": "a", "text": "Hiệp định Geneva", "isCorrect": true },
+        { "id": "b", "text": "Hiệp định Paris", "isCorrect": false },
+        { "id": "c", "text": "Hiệp định Versailles", "isCorrect": false },
+        { "id": "d", "text": "Hiệp định Yalta", "isCorrect": false }
+      ],
+      "explanation": "Sau chiến thắng Điện Biên Phủ, Hiệp định Geneva được ký kết vào tháng 7/1954, chấm dứt chiến tranh Đông Dương.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q16",
+      "modelId": "4",
+      "modelTitle": "NGỌ MÔN - CỔNG HOÀNG CUNG HUẾ",
+      "question": "Ngọ Môn được xây dựng dưới triều vua nào?",
+      "type": "multiple_choice",
+      "options": [
+        { "id": "a", "text": "Vua Minh Mạng", "isCorrect": true },
+        { "id": "b", "text": "Vua Gia Long", "isCorrect": false },
+        { "id": "c", "text": "Vua Tự Đức", "isCorrect": false },
+        { "id": "d", "text": "Vua Khải Định", "isCorrect": false }
+      ],
+      "explanation": "Ngọ Môn được xây dựng năm 1833 dưới triều vua Minh Mạng, là cổng chính vào Hoàng thành Huế.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q17",
+      "modelId": "4",
+      "modelTitle": "NGỌ MÔN - CỔNG HOÀNG CUNG HUẾ",
+      "question": "Ngọ Môn giữ vai trò gì trong các nghi lễ của triều Nguyễn?",
+      "type": "multiple_choice",
+      "options": [
+        { "id": "a", "text": "Nơi cử hành các nghi lễ trọng đại, ban chiếu chỉ", "isCorrect": true },
+        { "id": "b", "text": "Chỉ dùng làm kho chứa vũ khí", "isCorrect": false },
+        { "id": "c", "text": "Là cổng dành riêng cho sứ thần ngoại quốc", "isCorrect": false },
+        { "id": "d", "text": "Là nơi tổ chức lễ hội dân gian", "isCorrect": false }
+      ],
+      "explanation": "Ngọ Môn là nơi diễn ra các nghi lễ trọng đại của triều đình như duyệt binh, ban chiếu, tiếp sứ…",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q18",
+      "modelId": "4",
+      "modelTitle": "NGỌ MÔN - CỔNG HOÀNG CUNG HUẾ",
+      "question": "Điểm đặc biệt trong kiến trúc của Ngọ Môn là gì?",
+      "type": "multiple_choice",
+      "options": [
+        { "id": "a", "text": "Kết hợp đài vọng lâu 2 tầng với hệ thống cổng 5 lối đi", "isCorrect": true },
+        { "id": "b", "text": "Hoàn toàn xây bằng gỗ lim, không có gạch đá", "isCorrect": false },
+        { "id": "c", "text": "Chỉ có một cổng ra vào duy nhất", "isCorrect": false },
+        { "id": "d", "text": "Được xây theo phong cách kiến trúc châu Âu", "isCorrect": false }
+      ],
+      "explanation": "Ngọ Môn gồm phần đài xây bằng gạch đá và lầu Ngũ Phụng phía trên, với 5 lối đi tượng trưng cho trật tự lễ nghi của triều đình.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q19",
+      "modelId": "4",
+      "modelTitle": "NGỌ MÔN - CỔNG HOÀNG CUNG HUẾ",
+      "question": "Lối đi nào ở Ngọ Môn chỉ dành riêng cho nhà vua?",
+      "type": "multiple_choice",
+      "options": [
+        { "id": "a", "text": "Cổng chính giữa (Ngọ Môn Quan)", "isCorrect": true },
+        { "id": "b", "text": "Hai cổng bên ngoài cùng", "isCorrect": false },
+        { "id": "c", "text": "Tất cả các lối đi đều dùng chung", "isCorrect": false },
+        { "id": "d", "text": "Chỉ có lối đi phía sau Ngọ Môn", "isCorrect": false }
+      ],
+      "explanation": "Theo quy định lễ nghi, chỉ có nhà vua mới được đi qua lối đi chính giữa của Ngọ Môn.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q20",
+      "modelId": "4",
+      "modelTitle": "NGỌ MÔN - CỔNG HOÀNG CUNG HUẾ",
+      "question": "Tên lầu nằm trên đỉnh Ngọ Môn là gì?",
+      "type": "multiple_choice",
+      "options": [
+        { "id": "a", "text": "Lầu Ngũ Phụng", "isCorrect": true },
+        { "id": "b", "text": "Lầu Bát Giác", "isCorrect": false },
+        { "id": "c", "text": "Lầu Kỳ Đài", "isCorrect": false },
+        { "id": "d", "text": "Lầu Thái Hòa", "isCorrect": false }
+      ],
+      "explanation": "Trên đài Ngọ Môn là lầu Ngũ Phụng, gồm 9 mái tượng trưng cho uy quyền của hoàng gia.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q21",
+      "modelId": "4",
+      "modelTitle": "NGỌ MÔN - CỔNG HOÀNG CUNG HUẾ",
+      "question": "Ngọ Môn quay mặt về hướng nào của kinh thành Huế?",
+      "type": "multiple_choice",
+      "options": [
+        { "id": "a", "text": "Hướng Nam", "isCorrect": true },
+        { "id": "b", "text": "Hướng Bắc", "isCorrect": false },
+        { "id": "c", "text": "Hướng Đông", "isCorrect": false },
+        { "id": "d", "text": "Hướng Tây", "isCorrect": false }
+      ],
+      "explanation": "Ngọ Môn quay mặt về hướng Nam, theo quan niệm truyền thống \"tọa Bắc triều Nam\" của kiến trúc cung đình Á Đông.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q22",
+      "modelId": "4",
+      "modelTitle": "NGỌ MÔN - CỔNG HOÀNG CUNG HUẾ",
+      "question": "Khi quan sát mô hình AR Ngọ Môn, chi tiết nào thể hiện rõ nhất sự nguy nga của kiến trúc cung đình?",
+      "type": "multiple_choice",
+      "options": [
+        { "id": "a", "text": "Hệ mái ngói nhiều tầng với rồng phượng trang trí", "isCorrect": true },
+        { "id": "b", "text": "Những bức tường trơn, không có hoa văn", "isCorrect": false },
+        { "id": "c", "text": "Chỉ có phần sân gạch phía trước", "isCorrect": false },
+        { "id": "d", "text": "Các ô cửa đều giống hệt nhau, không trang trí", "isCorrect": false }
+      ],
+      "explanation": "Hệ mái ngói nhiều tầng, cùng các chi tiết rồng phượng và hoa văn trên mái thể hiện rõ sự tinh xảo của kiến trúc cung đình triều Nguyễn.",
+      "difficulty": "medium"
+    }
+  ],
+  "models": [
+    {
+      "id": "1",
+      "title": "CON TÀU BÁC HỒ RA ĐI TÌM ĐƯỜNG CỨU NƯỚC",
+      "type": "animated",
+      "description": "Khám phá hành trình lịch sử của Bác Hồ trên con tàu Amiral Latouche-Tréville năm 1911",
+      "questions": ["q1", "q2", "q3", "q11", "q14"]
+    },
+    {
+      "id": "2",
+      "title": "DIORAMA CHIẾN THẮNG ĐIỆN BIÊN PHỦ",
+      "type": "ar",
+      "description": "Trải nghiệm AR với mô hình 3D sống động về chiến thắng lịch sử năm 1954",
+      "questions": ["q4", "q5", "q6", "q7", "q12", "q15"]
+    },
+    {
+      "id": "3",
+      "title": "TRỐNG ĐỒNG ĐÔNG SƠN",
+      "type": "animated",
+      "description": "Di sản văn hóa Việt Nam cổ đại - niềm tự hào dân tộc",
+      "questions": ["q8", "q9", "q10", "q13"]
+    },
+    {
+      "id": "4",
+      "title": "NGỌ MÔN - CỔNG HOÀNG CUNG HUẾ",
+      "type": "ar",
+      "description": "Biểu tượng kiến trúc cung đình triều Nguyễn tại Hoàng thành Huế",
+      "questions": ["q16", "q17", "q18", "q19", "q20", "q21", "q22"]
+    }
+  ],
+  "quizSettings": {
+    "timePerQuestion": 30,
+    "totalQuestions": 5,
+    "passingScore": 60,
+    "showExplanation": true,
+    "allowRetry": true
+  }
+}

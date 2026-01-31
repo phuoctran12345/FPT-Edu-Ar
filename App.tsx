@@ -68,11 +68,13 @@ import PureARScreen from './screens/PureARScreen';
 import PokemonARViewer from './components/PokemonARViewer';
 import SimpleARViewer from './components/SimpleARViewer';
 import OptimizedARViewer from './components/OptimizedARViewer';
+import EDUARFlow from './screens/EDUARFlow';
 
-type AppMode = 'menu' | 'sketchfab' | 'ar' | 'pure-ar' | 'pokemon-ar' | 'simple-ar' | 'optimized-ar';
+type AppMode = 'menu' | 'sketchfab' | 'ar' | 'pure-ar' | 'pokemon-ar' | 'simple-ar' | 'optimized-ar' | 'edu-ar';
 
 export default function App() {
-  const [mode, setMode] = useState<AppMode>('menu');
+  // Mở trực tiếp vào EDU AR Flow thay vì menu demo
+  const [mode, setMode] = useState<AppMode>('edu-ar');
 
   // Menu chính để chọn demo
   if (mode === 'menu') {
@@ -141,6 +143,16 @@ export default function App() {
             <Text style={styles.menuButtonText}>
               📱 Optimized AR (iPhone 12 Pro Max){'\n'}
               <Text style={styles.menuButtonSubtext}>(Tối ưu cho iPhone 12 Pro Max - Perfect positioning)</Text>
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.menuButton, { backgroundColor: '#E02222' }]}
+            onPress={() => setMode('edu-ar')}
+          >
+            <Text style={styles.menuButtonText}>
+              🎨 EDU AR - Hào Khí Việt{'\n'}
+              <Text style={styles.menuButtonSubtext}>(9 màn hình từ Figma design - Splash → About)</Text>
             </Text>
           </TouchableOpacity>
 
@@ -230,6 +242,7 @@ export default function App() {
   }
 
   // Pure Dynamic AR
+  if (mode === 'pure-ar') {
   return (
     <SafeAreaProvider>
       <View style={styles.demoContainer}>
@@ -237,6 +250,20 @@ export default function App() {
       </View>
     </SafeAreaProvider>
   );
+  }
+
+  // EDU AR Flow - 9 màn hình từ Figma
+  if (mode === 'edu-ar') {
+    return (
+      <SafeAreaProvider>
+        <View style={styles.demoContainer}>
+          <EDUARFlow onBack={() => setMode('menu')} />
+        </View>
+      </SafeAreaProvider>
+    );
+  }
+
+  return null;
 }
 
 const styles = StyleSheet.create({

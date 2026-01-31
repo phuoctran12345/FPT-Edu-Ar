@@ -35,9 +35,9 @@ export const GLB_MODEL_DATABASE: { [key: string]: GLBModelConfig } = {
   'scizor': {
     id: 'scizor',
     name: 'Scizor',
-    filePath: 'assets/models/pokemon_scizor.glb', // ✅ USE ROOT LEVEL FILE
-    scale: 0.6, // ✅ SCALE PHÙ HỢP
-    position: { x: 0, y: -0.8, z: 0 }, // ✅ VỊ TRÍ CHÍNH GIỮA
+    filePath: 'assets/models/pokemon_concua/pokemon_scizor.glb', // ✅ UPDATED PATH SAU KHI XÓA FILE GỐC
+    scale: 0.6,
+    position: { x: 0, y: -0.8, z: 0 },
     rotation: { x: 0, y: 0, z: 0 },
     animations: ['idle', 'attack', 'fly'],
   },
@@ -89,7 +89,7 @@ export const MODEL_DATABASE: { [key: string]: ModelData } = {
   'scizor': {
     id: 'scizor',
     name: 'Scizor',
-    modelPath: 'pokemon_scizor.glb',
+    modelPath: 'pokemon_concua/pokemon_scizor.glb',
     description: 'Pokémon côn trùng thép mạnh mẽ',
     scale: 0.04,
   },

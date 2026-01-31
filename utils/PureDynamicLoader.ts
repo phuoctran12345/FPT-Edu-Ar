@@ -3,6 +3,7 @@
 
 import * as THREE from 'three';
 import { loadAsync } from 'expo-three';
+import { validateSecureQR, SecureQRData } from './QRValidator';
 
 export interface QRData {
   modelId: string;

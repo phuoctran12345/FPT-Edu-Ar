@@ -9,6 +9,8 @@ import { Asset } from 'expo-asset';
 import { GestureHandlerRootView, PanGestureHandler, State } from 'react-native-gesture-handler';
 import { getGLBModelFromQRData, getGLBModelConfig } from '../utils/modelData';
 
+const DEBUG = false;
+
 interface PokemonARViewerProps {
   onClose: () => void;
 }
@@ -42,51 +44,53 @@ const PokemonARViewer: React.FC<PokemonARViewerProps> = ({ onClose }) => {
   const [isZooming, setIsZooming] = useState(false);
 
   // ✅ PANRESPONDER CHO 3D INTERACTION - XỬ LÝ CỬ CHỈ LIÊN TỤC!
-  console.log('🎮 Using PanResponder for continuous gestures...');
+  if (DEBUG) console.log('🎮 Using PanResponder for continuous gestures...');
 
   // ✅ PANRESPONDER CHO 3D INTERACTION - CHUYÊN NGHIỆP!
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => {
-      console.log('🎮 PanResponder: onStartShouldSetPanResponder called');
+      if (DEBUG) console.log('🎮 PanResponder: onStartShouldSetPanResponder called');
       return true;
     },
     onMoveShouldSetPanResponder: () => {
-      console.log('🎮 PanResponder: onMoveShouldSetPanResponder called');
+      if (DEBUG) console.log('🎮 PanResponder: onMoveShouldSetPanResponder called');
       return true;
     },
     
     onPanResponderGrant: (evt) => {
-      console.log('🎮 PanResponder: Interaction started');
-      console.log('🎮 PanResponder: Touch event details:', {
-        touches: evt.nativeEvent.touches?.length || 0,
-        timestamp: evt.nativeEvent.timestamp,
-        target: evt.target
-      });
+      if (DEBUG) {
+        console.log('🎮 PanResponder: Interaction started');
+        console.log('🎮 PanResponder: Touch event details:', {
+          touches: evt.nativeEvent.touches?.length || 0,
+          timestamp: evt.nativeEvent.timestamp,
+          target: evt.target
+        });
+      }
       
       // ✅ ẨN GESTURE HINT SAU KHI USER TƯƠNG TÁC
       if (showGestureHint) {
-        console.log(`🎯 Hiding gesture hint after user interaction`);
+        if (DEBUG) console.log(`🎯 Hiding gesture hint after user interaction`);
         setShowGestureHint(false);
       }
       
       // ✅ SETUP INITIAL STATE
       setIsRotating(true);
       setIsZooming(false);
-      console.log('🔄 PanResponder ready for interaction');
+      if (DEBUG) console.log('🔄 PanResponder ready for interaction');
     },
     
     onPanResponderMove: (evt, gestureState) => {
       if (!modelRef.current) {
-        console.log('❌ PanResponder: modelRef.current is null');
+        if (DEBUG) console.log('❌ PanResponder: modelRef.current is null');
         return;
       }
       
       const touches = evt.nativeEvent.touches;
-      console.log(`🎮 PanResponder move: ${touches.length} fingers, dx: ${gestureState.dx.toFixed(2)}, dy: ${gestureState.dy.toFixed(2)}`);
+      if (DEBUG) console.log(`🎮 PanResponder move: ${touches.length} fingers, dx: ${gestureState.dx.toFixed(2)}, dy: ${gestureState.dy.toFixed(2)}`);
       
       if (touches.length === 1) {
         // ✅ THUẬT TOÁN XOAY 360 ĐỘ - SINGLE TOUCH
-        console.log('🔄 Single touch detected - applying rotation');
+        if (DEBUG) console.log('🔄 Single touch detected - applying rotation');
         const ROTATION_SENSITIVITY = 0.01;
         const deltaX = gestureState.dx * ROTATION_SENSITIVITY;
         const deltaY = gestureState.dy * ROTATION_SENSITIVITY;
@@ -101,11 +105,11 @@ const PokemonARViewer: React.FC<PokemonARViewerProps> = ({ onClose }) => {
         modelRef.current.rotation.y = currentRotationY;
         modelRef.current.rotation.x = clampedRotationX;
         
-        console.log(`🔄 Rotation applied: X=${clampedRotationX.toFixed(3)}, Y=${currentRotationY.toFixed(3)}`);
+        if (DEBUG) console.log(`🔄 Rotation applied: X=${clampedRotationX.toFixed(3)}, Y=${currentRotationY.toFixed(3)}`);
         
       } else if (touches.length === 2) {
         // ✅ THUẬT TOÁN ZOOM IN/OUT - MULTI TOUCH
-        console.log('🔍 Multi touch detected - applying zoom');
+        if (DEBUG) console.log('🔍 Multi touch detected - applying zoom');
         const currentDistance = Math.sqrt(
           Math.pow(touches[0].pageX - touches[1].pageX, 2) + 
           Math.pow(touches[0].pageY - touches[1].pageY, 2)
@@ -119,19 +123,19 @@ const PokemonARViewer: React.FC<PokemonARViewerProps> = ({ onClose }) => {
         // ✅ CẬP NHẬT MODEL
         modelRef.current.scale.setScalar(targetScale);
         
-        console.log(`🔍 Zoom applied: ${scale.toFixed(2)}x, Scale: ${targetScale.toFixed(3)}`);
+        if (DEBUG) console.log(`🔍 Zoom applied: ${scale.toFixed(2)}x, Scale: ${targetScale.toFixed(3)}`);
       }
     },
     
     onPanResponderRelease: (evt) => {
-      console.log('🎮 PanResponder: Interaction ended');
+      if (DEBUG) console.log('🎮 PanResponder: Interaction ended');
       
       // ✅ LƯU TRẠNG THÁI TRƯỚC ĐÓ KHI GESTURE KẾT THÚC
       if (modelRef.current) {
         setPreviousRotationX(modelRef.current.rotation.x);
         setPreviousRotationY(modelRef.current.rotation.y);
         setPreviousScale(modelRef.current.scale.x);
-        console.log(`💾 Saved state: rotationX=${modelRef.current.rotation.x.toFixed(3)}, rotationY=${modelRef.current.rotation.y.toFixed(3)}, scale=${modelRef.current.scale.x.toFixed(3)}`);
+        if (DEBUG) console.log(`💾 Saved state: rotationX=${modelRef.current.rotation.x.toFixed(3)}, rotationY=${modelRef.current.rotation.y.toFixed(3)}, scale=${modelRef.current.scale.x.toFixed(3)}`);
       }
       
       setIsRotating(false);
@@ -483,27 +487,36 @@ const PokemonARViewer: React.FC<PokemonARViewerProps> = ({ onClose }) => {
     };
   }, []);
 
+  // ✅ HELPER: MAP FILE PATH → BUNDLED ASSET (KHÔNG CÒN FILE CŨ Ở GỐC)
+  const resolveBundledAsset = (filePath: string) => {
+    if (filePath.includes('pokemon_scizor.glb')) {
+      return Asset.fromModule(require('../assets/models/pokemon_concua/pokemon_scizor.glb'));
+    }
+    if (filePath.includes('Fox.glb')) {
+      return Asset.fromModule(require('../assets/models/Fox.glb'));
+    }
+    throw new Error(`Unsupported bundled asset: ${filePath}`);
+  };
+
   // ✅ PRELOAD MODELS FOR INSTANT LOADING
   const preloadModels = async () => {
     try {
       console.log('⚡ Preloading models for instant access...');
 
-      // ✅ PRELOAD SCIZOR MODEL - DIRECT LOADING
-      try {
-        const scizorModuleId = require('../assets/models/pokemon_scizor.glb');
-        console.log('✅ Scizor model preloaded! ModuleId:', scizorModuleId);
-      } catch (error) {
-        console.log('⚠️ Scizor preload failed:', error);
-      }
+      const preloadTargets = [
+        { name: 'Scizor', path: 'assets/models/pokemon_concua/pokemon_scizor.glb' },
+        { name: 'Fox', path: 'assets/models/Fox.glb' },
+      ];
 
-      // ✅ PRELOAD FOX MODEL - DIRECT LOADING
-      try {
-        const foxModuleId = require('../assets/models/Fox.glb');
-        console.log('✅ Fox model preloaded! ModuleId:', foxModuleId);
-      } catch (error) {
-        console.log('⚠️ Fox preload failed:', error);
+      for (const target of preloadTargets) {
+        try {
+          const asset = resolveBundledAsset(target.path);
+          await asset.downloadAsync();
+          console.log(`✅ ${target.name} model preloaded!`, asset.localUri || asset.uri);
+        } catch (error) {
+          console.log(`⚠️ ${target.name} preload failed:`, error);
+        }
       }
-
     } catch (error) {
       console.log('⚠️ Preload failed, will load on demand:', error);
     }
@@ -610,13 +623,10 @@ const PokemonARViewer: React.FC<PokemonARViewerProps> = ({ onClose }) => {
           // ✅ SIMPLE ASSET LOADING
           console.log('🔍 Loading asset for:', glbConfig.filePath);
 
-            if (glbConfig.filePath === 'assets/models/pokemon_scizor.glb') {
-            asset = Asset.fromModule(require('../assets/models/pokemon_scizor.glb'));
-            } else if (glbConfig.filePath === 'assets/models/Fox.glb') {
-            asset = Asset.fromModule(require('../assets/models/Fox.glb'));
-                              } else {
-              throw new Error(`Unknown model filePath: ${glbConfig.filePath}`);
-            }
+          const normalizedPath = glbConfig.filePath.includes('pokemon_scizor.glb')
+            ? 'assets/models/pokemon_concua/pokemon_scizor.glb'
+            : glbConfig.filePath;
+          asset = resolveBundledAsset(normalizedPath);
 
           console.log('✅ Asset created:', asset.uri);
             await asset.downloadAsync();
