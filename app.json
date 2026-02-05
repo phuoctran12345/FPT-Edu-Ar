@@ -34,7 +34,8 @@
         "android.permission.RECORD_AUDIO"
       ],
       "edgeToEdgeEnabled": false,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.SecondDemo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -47,6 +48,11 @@
           "cameraPermission": "Cho phép $(PRODUCT_NAME) truy cập camera để quét QR và hiển thị AR"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "003555e6-3fcf-41d5-8ad0-e23152168e89"
+      }
+    }
   }
 }
