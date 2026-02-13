@@ -37,6 +37,7 @@
     "@types/react": "~19.1.0",
     "@types/three": "^0.180.0",
     "babel-plugin-inline-dotenv": "^1.7.0",
+    "babel-preset-expo": "~13.0.0",
     "typescript": "~5.9.2"
   },
   "private": true,
