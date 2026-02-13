@@ -43,6 +43,3 @@ yarn-error.*
 
 # Large assets (GitHub limit 100MB) - host elsewhere or use Git LFS
 assets/vidieo/final-vidieo.mp4
-assets/models/KYDAI.glb
-assets/models/ngomon.glb
-assets/models/HamTank1.glb
