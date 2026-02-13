@@ -8,7 +8,7 @@
 
 ## 🎬 Demo
 
-[Xem video demo →](FinalDemo.mp4)
+Video trong app dùng qua biến môi trường `EXPO_PUBLIC_VIDEO_URL` (cấu hình trong EAS hoặc `.env`). Không dùng file video local để giữ repo nhẹ.
 
 ---
 
@@ -183,11 +183,11 @@ FPTEduAR/
 ├── data/                       # Ảnh, JSON (modelStories, question)
 ├── theme/
 │   └── colors.ts
-├── assets/                     # Icons, images, models 3D, video, QR
+├── assets/                     # Icons, images, models 3D, QR (video qua EXPO_PUBLIC_VIDEO_URL)
 │   ├── image/
 │   ├── models/                 # .glb, textures (3d1, 3d2, 3d3, 3d4)
 │   ├── qr-codes/
-│   └── vidieo/
+│   └── vidieo/                 # (tùy chọn, local; app chính dùng video URL)
 ├── package.json
 ├── eas.json                    # EAS Build config (sau khi chạy eas build:configure)
 └── README.md

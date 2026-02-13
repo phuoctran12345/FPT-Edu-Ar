@@ -60,7 +60,7 @@ export default function SimpleARViewer() {
       console.log('📦 Loading simple GLB model...');
       
       // ✅ DIRECT GLB LOADING - NO COMPLEXITY
-      const asset = Asset.fromModule(require('../assets/models/pokemon_concua/pokemon_scizor.glb'));
+      const asset = Asset.fromModule(require('../assets/models/ShipWithPhao.glb'));
       await asset.downloadAsync();
       
       // ✅ USE EXPO-THREE'S SIMPLE LOADER
@@ -90,7 +90,7 @@ export default function SimpleARViewer() {
   };
 
   const handleBarCodeScanned = ({ type, data }: any) => {
-    if (data === 'scizor' && !scanned) {
+    if ((data === 'ship' || data === 'fox') && !scanned) {
       setScanned(true);
       loadSimpleModel();
     }

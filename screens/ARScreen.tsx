@@ -71,30 +71,30 @@ const ARScreen: React.FC = () => {
 
           <TouchableOpacity
             style={styles.testButton}
-            onPress={() => handleTestModel(SAMPLE_QR_DATA.pikachu, 'Pikachu')}
+            onPress={() => handleTestModel(SAMPLE_QR_DATA.ship, 'Chiến hạm')}
           >
-            <Text style={styles.testButtonText}>⚡ Test Pikachu</Text>
+            <Text style={styles.testButtonText}>🚢 Chiến hạm</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.testButton}
-            onPress={() => handleTestModel(SAMPLE_QR_DATA.raichu, 'Raichu')}
+            onPress={() => handleTestModel(SAMPLE_QR_DATA.hamtank, 'Xe tăng HamTank')}
           >
-            <Text style={styles.testButtonText}>⚡ Test Raichu</Text>
+            <Text style={styles.testButtonText}>🛡️ HamTank</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.testButton}
-            onPress={() => handleTestModel(SAMPLE_QR_DATA.scizor, 'Scizor')}
+            onPress={() => handleTestModel(SAMPLE_QR_DATA.kydai, 'Đài KYDAI')}
           >
-            <Text style={styles.testButtonText}>🦂 Test Scizor</Text>
+            <Text style={styles.testButtonText}>🏛️ KYDAI</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.testButton}
-            onPress={() => handleTestModel(SAMPLE_QR_DATA.pikachuLarge, 'Pikachu (Large)')}
+            onPress={() => handleTestModel(SAMPLE_QR_DATA.ngomon, 'Ngô Môn')}
           >
-            <Text style={styles.testButtonText}>⚡ Test Pikachu Lớn</Text>
+            <Text style={styles.testButtonText}>🚪 Ngô Môn</Text>
           </TouchableOpacity>
         </View>
 
@@ -114,10 +114,10 @@ const ARScreen: React.FC = () => {
           <Text style={styles.sectionTitle}>🔲 Tạo mã QR để test</Text>
           <Text style={styles.qrInfo}>
             Dữ liệu QR code mẫu:{'\n\n'}
-            • "pikachu" - Model Pikachu cơ bản{'\n'}
-            • "raichu" - Model Raichu{'\n'}
-            • "scizor" - Model Scizor (đỏ kim loại){'\n'}
-            • {`{"modelId":"pikachu","scale":2.0}`} - Pikachu lớn gấp đôi
+            • "ship" - Chiến hạm{'\n'}
+            • "hamtank" - Xe tăng{'\n'}
+            • "kydai" - Đài tưởng niệm{'\n'}
+            • "ngomon" - Ngô Môn Huế
           </Text>
           <Text style={styles.qrNote}>
             📝 Dùng tool tạo QR online với dữ liệu trên

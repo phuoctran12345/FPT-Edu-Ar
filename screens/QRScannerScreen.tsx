@@ -50,44 +50,32 @@ const QRScannerScreen: React.FC<QRScannerScreenProps> = ({
     }
   };
 
-  // QR codes mẫu để test
+  // QR codes mẫu - khớp với Museum3DViewer (modelId 1,2,3,4)
   const sampleQRs = [
     {
       id: '1',
-      title: 'Quân Pháp đổ bộ Sơn Trà (1858)',
+      title: 'Chiến hạm lịch sử',
       image: require('../assets/qr-codes/qr-model-1.png'),
-      data: JSON.stringify({
-        type: 'ar_model',
-        modelId: '1',
-        title: 'Quân Pháp đổ bộ Sơn Trà',
-        year: '1858',
-        modelPath: 'assets/models/3D 1.glb',
-      })
+      data: JSON.stringify({ type: 'ar_model', modelId: '1', modelPath: 'assets/models/ShipWithPhao.glb' }),
     },
     {
-      id: '2', 
-      title: 'Bác Hồ đọc Tuyên ngôn Độc lập (1945)',
+      id: '2',
+      title: 'Xe tăng HamTank',
       image: require('../assets/qr-codes/qr-model-2.png'),
-      data: JSON.stringify({
-        type: 'ar_model',
-        modelId: '2',
-        title: 'Bác Hồ đọc Tuyên ngôn Độc lập',
-        year: '1945',
-        modelPath: 'assets/models/3D 2.glb',
-      })
+      data: JSON.stringify({ type: 'ar_model', modelId: '2', modelPath: 'assets/models/HamTank1.glb' }),
     },
     {
       id: '3',
-      title: 'Chiến thắng Điện Biên Phủ (1954)',
+      title: 'Đài tưởng niệm KYDAI',
       image: require('../assets/qr-codes/qr-model-3.png'),
-      data: JSON.stringify({
-        type: 'ar_model',
-        modelId: '3',
-        title: 'Chiến thắng Điện Biên Phủ',
-        year: '1954',
-        modelPath: 'assets/models/3D 3.glb',
-      })
-    }
+      data: JSON.stringify({ type: 'ar_model', modelId: '3', modelPath: 'assets/models/KYDAI.glb' }),
+    },
+    {
+      id: '4',
+      title: 'Ngô Môn Huế',
+      image: require('../assets/qr-codes/qr-model-3.png'),
+      data: JSON.stringify({ type: 'ar_model', modelId: '4', modelPath: 'assets/models/ngomon.glb' }),
+    },
   ];
 
   const handleSampleQRPress = (qrData: string) => {

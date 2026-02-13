@@ -135,7 +135,7 @@ export default function OptimizedARViewer() {
       console.log('📦 Loading optimized Fox GLB model for iPhone 12 Pro Max...');
       
       // ✅ SAFEST WAY: Pass moduleId directly to expo-three - USING FOX
-      const moduleId = require('../assets/models/Fox.glb');
+      const moduleId = require('../assets/models/ShipWithPhao.glb');
       const { loadAsync } = await import('expo-three');
       const gltf = await loadAsync(moduleId);
       
@@ -174,7 +174,7 @@ export default function OptimizedARViewer() {
   };
 
   const handleBarCodeScanned = ({ type, data }: any) => {
-    if ((data === 'scizor' || data === 'fox') && !scanned) {
+    if ((data === 'ship' || data === 'fox') && !scanned) {
       setScanned(true);
       loadOptimizedModel();
     }

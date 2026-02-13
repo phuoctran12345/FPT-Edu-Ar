@@ -72,16 +72,12 @@ const PureQRScanner: React.FC<PureQRScannerProps> = ({ onScanSuccess, onBack }) 
 
   const handleTestCustomModel = () => {
     const customModelData = JSON.stringify({
-      modelId: "custom_pokemon",
-      name: "Custom Pokemon",
-      fileName: "pokemon_scizor.glb",
-      repository: "phuoctran12345/pokemon-3d-models",
-      branch: "main",
+      modelId: "ship",
+      name: "Chiến hạm",
+      fileName: "ShipWithPhao.glb",
       scale: 0.8,
       position: { x: 0.2, y: -0.6, z: 0.1 },
-      animations: ["idle", "walk"],
     });
-    console.log(`🧪 Testing custom model: ${customModelData}`);
     onScanSuccess(customModelData);
   };
 
@@ -135,27 +131,31 @@ const PureQRScanner: React.FC<PureQRScannerProps> = ({ onScanSuccess, onBack }) 
           </TouchableOpacity>
         )}
 
-        {/* Test Buttons */}
+        {/* Test Buttons - 4 model dự án */}
         <View style={styles.testButtonsContainer}>
           <TouchableOpacity 
             style={[styles.testButton, { backgroundColor: '#FF6B6B' }]} 
-            onPress={() => handleTestModel('scizor')}
+            onPress={() => handleTestModel('ship')}
           >
-            <Text style={styles.testButtonText}>🦂 Scizor</Text>
+            <Text style={styles.testButtonText}>🚢 Chiến hạm</Text>
           </TouchableOpacity>
-          
           <TouchableOpacity 
-            style={[styles.testButton, { backgroundColor: '#FFD93D' }]} 
-            onPress={() => handleTestModel('pikachu_sample.glb')}
+            style={[styles.testButton, { backgroundColor: '#8B4513' }]} 
+            onPress={() => handleTestModel('hamtank')}
           >
-            <Text style={styles.testButtonText}>⚡ Pikachu</Text>
+            <Text style={styles.testButtonText}>🛡️ Xe tăng</Text>
           </TouchableOpacity>
-          
+          <TouchableOpacity 
+            style={[styles.testButton, { backgroundColor: '#4A90D9' }]} 
+            onPress={() => handleTestModel('kydai')}
+          >
+            <Text style={styles.testButtonText}>🏛️ KYDAI</Text>
+          </TouchableOpacity>
           <TouchableOpacity 
             style={[styles.testButton, { backgroundColor: '#6BCF7F' }]} 
-            onPress={handleTestCustomModel}
+            onPress={() => handleTestModel('ngomon')}
           >
-            <Text style={styles.testButtonText}>🎮 Custom</Text>
+            <Text style={styles.testButtonText}>🚪 Ngô Môn</Text>
           </TouchableOpacity>
         </View>
 

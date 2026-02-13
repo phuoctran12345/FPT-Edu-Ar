@@ -71,28 +71,16 @@ export class PureDynamicLoader {
       // Simple string format: "modelId" or "modelId.glb"
       const cleanId = qrData.trim();
       
-      // Model name mapping with very small scales for AR
+      // Model name mapping - chỉ 4 model dự án (EDU AR Hào Khí Việt)
       const modelMapping: { [key: string]: { fileName: string; scale?: number; position?: { x: number; y: number; z: number } } } = {
-      'scizor': { 
-        fileName: 'pokemon_scizor.glb', // GLB cho tất cả platform
-        scale: 0.2, // Giảm từ 0.5 xuống 0.2 - nhỏ hơn 60%
-        position: { x: 0, y: -0.1, z: 0 } // Cao hơn để thấy rõ hơn
-      },
-        'pikachu': { 
-          fileName: 'pikachu_sample.glb',
-          scale: 0.3,
-          position: { x: 0, y: -0.4, z: 0 }
-        },
-        'pikachu_sample.glb': { 
-          fileName: 'pikachu_sample.glb',
-          scale: 0.3,
-          position: { x: 0, y: -0.4, z: 0 }
-        },
-        'pokemon_scizor.glb': { 
-          fileName: 'pokemon_scizor.glb',
-          scale: 0.15,
-          position: { x: 0, y: -0.6, z: 0 }
-        }
+        'ship': { fileName: 'ShipWithPhao.glb', scale: 0.2, position: { x: 0, y: -0.1, z: 0 } },
+        'hamtank': { fileName: 'HamTank1.glb', scale: 0.2, position: { x: 0, y: -0.1, z: 0 } },
+        'kydai': { fileName: 'KYDAI.glb', scale: 0.2, position: { x: 0, y: -0.1, z: 0 } },
+        'ngomon': { fileName: 'ngomon.glb', scale: 0.2, position: { x: 0, y: -0.1, z: 0 } },
+        'ShipWithPhao.glb': { fileName: 'ShipWithPhao.glb', scale: 0.2, position: { x: 0, y: -0.1, z: 0 } },
+        'HamTank1.glb': { fileName: 'HamTank1.glb', scale: 0.2, position: { x: 0, y: -0.1, z: 0 } },
+        'KYDAI.glb': { fileName: 'KYDAI.glb', scale: 0.2, position: { x: 0, y: -0.1, z: 0 } },
+        'ngomon.glb': { fileName: 'ngomon.glb', scale: 0.2, position: { x: 0, y: -0.1, z: 0 } },
       };
       
       const modelConfig = modelMapping[cleanId] || { fileName: cleanId.endsWith('.glb') ? cleanId : `${cleanId}.glb` };
@@ -101,7 +89,7 @@ export class PureDynamicLoader {
       return {
         modelId: cleanId.replace('.glb', ''),
         fileName: fileName,
-        repository: 'phuoctran12345/pokemon-3d-models',
+        repository: '',
         branch: 'main'
       };
       

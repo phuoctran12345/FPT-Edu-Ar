@@ -65,12 +65,11 @@ console.error = (...args) => {
 import Demo from './components/Demo';
 import ARScreen from './screens/ARScreen';
 import PureARScreen from './screens/PureARScreen';
-import PokemonARViewer from './components/PokemonARViewer';
 import SimpleARViewer from './components/SimpleARViewer';
 import OptimizedARViewer from './components/OptimizedARViewer';
 import EDUARFlow from './screens/EDUARFlow';
 
-type AppMode = 'menu' | 'sketchfab' | 'ar' | 'pure-ar' | 'pokemon-ar' | 'simple-ar' | 'optimized-ar' | 'edu-ar';
+type AppMode = 'menu' | 'sketchfab' | 'ar' | 'pure-ar' | 'simple-ar' | 'optimized-ar' | 'edu-ar';
 
 export default function App() {
   // Mở trực tiếp vào EDU AR Flow thay vì menu demo
@@ -92,7 +91,7 @@ export default function App() {
           >
             <Text style={styles.menuButtonText}>
               🌐 Sketchfab 3D Viewer{'\n'}
-              <Text style={styles.menuButtonSubtext}>(Pikachu vs Raichu)</Text>
+              <Text style={styles.menuButtonSubtext}>(Web 3D)</Text>
             </Text>
           </TouchableOpacity>
 
@@ -113,16 +112,6 @@ export default function App() {
             <Text style={styles.menuButtonText}>
               🚀 Pure Dynamic AR{'\n'}
               <Text style={styles.menuButtonSubtext}>(Hoàn toàn dynamic - Không hardcode)</Text>
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.menuButton, { backgroundColor: '#8B0000' }]}
-            onPress={() => setMode('pokemon-ar')}
-          >
-            <Text style={styles.menuButtonText}>
-              🦂 Pokemon AR Camera (Complex){'\n'}
-              <Text style={styles.menuButtonSubtext}>(Camera + QR Scanner + Pokemon 3D đầy đủ màu sắc)</Text>
             </Text>
           </TouchableOpacity>
 
@@ -195,17 +184,6 @@ export default function App() {
     );
   }
 
-
-  // Pokemon AR Camera
-  if (mode === 'pokemon-ar') {
-    return (
-      <SafeAreaProvider>
-        <View style={styles.demoContainer}>
-          <PokemonARViewer onClose={() => setMode('menu')} />
-        </View>
-      </SafeAreaProvider>
-    );
-  }
 
   // Simple AR (Recommended)
   if (mode === 'simple-ar') {

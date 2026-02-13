@@ -24,8 +24,9 @@ const ModelStoryScreen: React.FC<ModelStoryScreenProps> = ({
 }) => {
   const videoRef = useRef<Video>(null);
 
-  // 🎬 Video chung cho 4 mô hình (final-vidieo.mp4)
-  const MAIN_VIDEO = require('../assets/vidieo/final-vidieo.mp4');
+  // 🎬 Video từ URL (env) — không require file local để EAS build pass khi đã xóa file nặng
+  const VIDEO_URI = process.env.EXPO_PUBLIC_VIDEO_URL ?? '';
+  const MAIN_VIDEO = VIDEO_URI ? { uri: VIDEO_URI } : null;
   const VIDEO_FILES = {
     '1': MAIN_VIDEO,
     '2': MAIN_VIDEO,
@@ -57,7 +58,7 @@ const ModelStoryScreen: React.FC<ModelStoryScreenProps> = ({
   const story = MODEL_STORIES[modelId];
   const currentVideo = VIDEO_FILES[modelId as keyof typeof VIDEO_FILES];
 
-  if (!story || !currentVideo) {
+  if (!story) {
     return (
       <SafeAreaView style={styles.container} edges={['top']}>
         <View style={styles.emptyState}>
@@ -132,14 +133,22 @@ const ModelStoryScreen: React.FC<ModelStoryScreenProps> = ({
           </View>
 
           <View style={styles.videoContainer}>
-            <Video
-              ref={videoRef}
-              style={styles.video}
-              source={currentVideo}
-              useNativeControls
-              resizeMode={ResizeMode.CONTAIN}
-              isLooping={false}
-            />
+            {currentVideo ? (
+              <Video
+                ref={videoRef}
+                style={styles.video}
+                source={currentVideo}
+                useNativeControls
+                resizeMode={ResizeMode.CONTAIN}
+                isLooping={false}
+              />
+            ) : (
+              <View style={styles.videoPlaceholder}>
+                <Text style={styles.videoPlaceholderText}>
+                  Chưa cấu hình video. Thêm EXPO_PUBLIC_VIDEO_URL trong EAS hoặc .env để dùng video từ URL.
+                </Text>
+              </View>
+            )}
           </View>
 
           {/* Text info dưới video cho dễ đọc */}
@@ -439,6 +448,19 @@ const styles = StyleSheet.create({
   video: {
     width: '100%',
     height: '100%',
+  },
+  videoPlaceholder: {
+    flex: 1,
+    minHeight: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+    backgroundColor: '#1a1a1a',
+  },
+  videoPlaceholderText: {
+    color: '#999',
+    fontSize: 13,
+    textAlign: 'center',
   },
   videoOverlay: {
     position: 'absolute',

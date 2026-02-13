@@ -7,11 +7,7 @@
     "start:ar": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web",
-    "ar:scizor": "echo '🎯 AR Scizor Mode - Quét QR code: scizor'",
-    "ar:pikachu": "echo '⚡ AR Pikachu Mode - Quét QR code: pikachu'",
-    "ar:debug": "echo '🔧 AR Debug Mode - Show debug info'",
-    "ar:reset": "echo '🔄 AR Reset - Clear cache and reload'"
+    "web": "expo start --web"
   },
   "dependencies": {
     "buffer": "^6.0.3",

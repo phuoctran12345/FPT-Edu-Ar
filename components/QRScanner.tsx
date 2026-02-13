@@ -40,7 +40,7 @@ const QRScanner: React.FC<QRScannerProps> = ({ onScanSuccess, onCancel }) => {
       }
     } catch (error) {
       // QR đơn giản hoặc không phải JSON
-      if (data.includes('museum_model') || ['1', '2', '3'].includes(data.trim())) {
+      if (data.includes('museum_model') || ['1', '2', '3', '4'].includes(data.trim())) {
         isValidAR = true;
       }
     }
