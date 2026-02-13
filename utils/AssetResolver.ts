@@ -1,10 +1,8 @@
 import { Asset } from 'expo-asset';
 
+// Chỉ bundle ShipWithPhao để EAS build pass (3 GLB kia đang .gitignore)
 const MODELS: Record<string, number> = {
   'ShipWithPhao.glb': require('../assets/models/ShipWithPhao.glb'),
-  'HamTank1.glb': require('../assets/models/HamTank1.glb'),
-  'KYDAI.glb': require('../assets/models/KYDAI.glb'),
-  'ngomon.glb': require('../assets/models/ngomon.glb'),
 };
 
 const FALLBACK = MODELS['ShipWithPhao.glb'];

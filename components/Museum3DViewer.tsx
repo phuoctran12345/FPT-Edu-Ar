@@ -43,17 +43,16 @@ type ModelTextureConfig =
 
 type ModelConfig = {
   name: string;
-  file: any;
+  file: any | null; // null = file không có trong bản build (đang .gitignore), chỉ model 1 bundle
   textures?: ModelTextureConfig;
 };
 
-// 🎯 MODEL CONFIGS - BẬT LẠI TEXTURES VỚI OPTIMIZATION
+// 🎯 MODEL CONFIGS - Chỉ require ShipWithPhao để EAS build pass (3 GLB kia đang .gitignore)
 const MODELS: Record<string, ModelConfig> = {
   '1': {
     name: 'CHIẾN HẠM LỊCH SỬ',
     file: require('../assets/models/ShipWithPhao.glb'),
     textures: {
-      // ✅ GLB không có embedded textures, dùng external textures từ 3d1
       baseColor: require('../assets/models/3d1/KyDai1_BaseColor (2048x2048).png'),
       normal: require('../assets/models/3d1/KyDai1_Normal (2048x2048).png'),
       metallicRoughness: require('../assets/models/3d1/KyDai1_Metallic-KyDai1_Roughness (2048x2048).png'),
@@ -61,21 +60,18 @@ const MODELS: Record<string, ModelConfig> = {
   },
   '2': {
     name: 'XE TĂNG HAMTANK',
-    file: require('../assets/models/HamTank1.glb'),
-    textures: '3d2' // ✅ Dùng textures từ folder 3d2 theo material name
+    file: null, // Thêm file HamTank1.glb vào repo (bỏ .gitignore) để dùng
+    textures: '3d2'
   },
   '3': {
     name: 'ĐÀI TƯỞNG NIỆM KYDAI',
-    file: require('../assets/models/KYDAI.glb'),
-    textures: '3d3' // ✅ Dùng textures từ folder 3d3 theo material name
+    file: null,
+    textures: '3d3'
   },
   '4': {
     name: 'NGÔ MÔN - HUẾ',
-    file: require('../assets/models/ngomon.glb'),
-    // Ưu tiên dùng atlas baseColor cung cấp trong 3d4 (4096x4096)
-    textures: {
-      baseColor: require('../assets/models/3d4/ngo mon (4096x4096).png'),
-    },
+    file: null,
+    textures: { baseColor: require('../assets/models/3d4/ngo mon (4096x4096).png') },
   },
 };
 
@@ -244,9 +240,7 @@ const Museum3DViewer: React.FC<Museum3DViewerProps> = ({ modelId, onBack, onCont
       
       const preloadTargets = [
         { name: 'ShipWithPhao', asset: MODELS['1'].file, textures: MODELS['1'].textures as any },
-        { name: 'HamTank1', asset: MODELS['2'].file, textures: MODELS['2'].textures as any },
-        { name: 'KYDAI', asset: MODELS['3'].file, textures: MODELS['3'].textures as any },
-      ];
+      ].filter((t) => t.asset != null);
       
       // ⚡ Load tất cả models SONG SONG (parallel) thay vì tuần tự
       const preloadPromises = preloadTargets.map(async (target) => {
@@ -1267,6 +1261,13 @@ const Museum3DViewer: React.FC<Museum3DViewerProps> = ({ modelId, onBack, onCont
 
       const modelConfig = MODELS[modelId as keyof typeof MODELS] || MODELS['1'];
       console.log('🎯 Loading model:', modelConfig.name);
+
+      if (modelConfig.file == null) {
+        setError(`Model "${modelConfig.name}" chưa có trong bản build này. Chọn Chiến hạm (1) hoặc thêm file GLB vào repo và bỏ .gitignore.`);
+        setIsLoading(false);
+        isLoadingModelRef.current = false;
+        return;
+      }
 
       // ⚡ SIMPLIFIED LOADING - Load GLB và textures song song nếu có thể
       const asset = Asset.fromModule(modelConfig.file);
